@@ -1,6 +1,7 @@
 """MathDocs CLI: offline by default; no API key needed."""
 from __future__ import annotations
 import argparse
+from importlib.resources import as_file, files
 from pathlib import Path
 from .schema import read_document
 from .word import build_word
@@ -17,11 +18,9 @@ def main(argv=None)->int:
     excel.add_argument("--output",type=Path,default=Path("output/mathdocs_demo.xlsx"))
     args=parser.parse_args(argv)
     if args.command=="demo":
-        sample=Path(__file__).resolve().parents[2]/"examples"/"lesson_limits.json"
-        if not sample.exists():
-            # fallback for editable install from another location
-            sample=Path("examples/lesson_limits.json")
-        out=build_word(read_document(sample),args.output)
+        sample=files("mathdocs").joinpath("data/lesson_limits.json")
+        with as_file(sample) as sample_path:
+            out=build_word(read_document(sample_path),args.output)
     elif args.command=="build":
         out=build_word(read_document(args.input),args.output)
     else:

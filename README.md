@@ -22,23 +22,23 @@
 
 ```powershell
 py -m venv .venv
-.\\.venv\\Scripts\\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 python -m pip install -e ".[dev,windows]"
 python -m pytest -q
-python -m mathdocs demo --output output\\example.docx
+python -m mathdocs demo --output output\example.docx
 ```
 
 **פתח ב־Word את `output/example.docx`** ונסה לערוך את הנוסחה ואת המטריצה.
 קובץ חדש מסיכום אחר:
 
 ```powershell
-python -m mathdocs build examples\\lesson_limits.json --output output\\limits.docx
+python -m mathdocs build examples\lesson_limits.json --output output\limits.docx
 ```
 
 Excel (Windows עם Excel מותקן):
 
 ```powershell
-python -m mathdocs excel-demo --output output\\matrix_chart.xlsx
+python -m mathdocs excel-demo --output output\matrix_chart.xlsx
 ```
 
 ## עבודה עם Codex
@@ -61,8 +61,15 @@ Codex יקרא את `AGENTS.md` ואת `docs/ARCHITECTURE.md`. אין צורך �
 ## מבנה תיקיות
 ```
 src/mathdocs/      מנועי קבצים, OMML, API אופציונלי ו־CLI
+src/mathdocs/data/ נתוני הדגמה הכלולים גם בחבילה המותקנת
 examples/          שיעור לדוגמה ב־JSON
 tests/             בדיקות מבנה וכשלים
 docs/              ארכיטקטורה ומשימות להמשך
 AGENTS.md          כללי עבודה ל־Codex
 ```
+
+יש להריץ את פקודות ההתקנה והבדיקות משורש הפרויקט. הייבואים הם דרך
+`mathdocs` (למשל `from mathdocs.word import build_word`). לאחר ההתקנה,
+אפשר להריץ `mathdocs demo` או `python -m mathdocs demo` מכל תיקייה.
+הקובץ `examples/lesson_limits.json` הוא עותק לעבודה של הדוגמה הכלולה בחבילה;
+בעת עדכון הדוגמה יש לעדכן גם את `src/mathdocs/data/lesson_limits.json`.

@@ -19,3 +19,11 @@ mathdocs = "mathdocs.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["mathdocs*"]
+
+[tool.setuptools.package-data]
+mathdocs = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
