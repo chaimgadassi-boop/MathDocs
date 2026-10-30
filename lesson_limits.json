@@ -1,0 +1,251 @@
+{
+  "version": "1",
+  "title": "MathDocs | הדגמה – גבולות ומטריצות",
+  "sections": [
+    {
+      "heading": "גבול באינסוף",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "כאשר איקס שואף לאינסוף, בודקים את החזקות הגבוהות במונה ובמכנה ומפשטים את השבר. ההדגמה כאן משתמשת בחלוקה באיקס בריבוע."
+        },
+        {
+          "kind": "equation",
+          "expr": {
+            "type": "limit",
+            "variable": "x",
+            "to": "∞",
+            "expression": {
+              "type": "fraction",
+              "numerator": {
+                "type": "sequence",
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "2"
+                  },
+                  {
+                    "type": "power",
+                    "base": {
+                      "type": "text",
+                      "value": "x"
+                    },
+                    "exponent": {
+                      "type": "text",
+                      "value": "2"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "value": "+5x"
+                  }
+                ]
+              },
+              "denominator": {
+                "type": "sequence",
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "4"
+                  },
+                  {
+                    "type": "power",
+                    "base": {
+                      "type": "text",
+                      "value": "x"
+                    },
+                    "exponent": {
+                      "type": "text",
+                      "value": "2"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "value": "−3"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "paragraph",
+          "text": "לאחר חלוקה של המונה והמכנה ב־x² מתקבל:"
+        },
+        {
+          "kind": "equation",
+          "expr": {
+            "type": "fraction",
+            "numerator": {
+              "type": "sequence",
+              "items": [
+                {
+                  "type": "text",
+                  "value": "2+"
+                },
+                {
+                  "type": "fraction",
+                  "numerator": {
+                    "type": "text",
+                    "value": "5"
+                  },
+                  "denominator": {
+                    "type": "text",
+                    "value": "x"
+                  }
+                }
+              ]
+            },
+            "denominator": {
+              "type": "sequence",
+              "items": [
+                {
+                  "type": "text",
+                  "value": "4−"
+                },
+                {
+                  "type": "fraction",
+                  "numerator": {
+                    "type": "text",
+                    "value": "3"
+                  },
+                  "denominator": {
+                    "type": "power",
+                    "base": {
+                      "type": "text",
+                      "value": "x"
+                    },
+                    "exponent": {
+                      "type": "text",
+                      "value": "2"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "paragraph",
+          "text": "כש־x שואף לאינסוף, שני השברים הקטנים שואפים לאפס. לכן:"
+        },
+        {
+          "kind": "equation",
+          "expr": {
+            "type": "fraction",
+            "numerator": {
+              "type": "text",
+              "value": "1"
+            },
+            "denominator": {
+              "type": "text",
+              "value": "2"
+            }
+          }
+        },
+        {
+          "kind": "note",
+          "text": "הנוסחאות אינן תמונות. אפשר להיכנס אליהן בעורך המשוואות של Microsoft Word."
+        }
+      ]
+    },
+    {
+      "heading": "מטריצה מקורית לעריכה",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "לחצו על המטריצה בתוך Word ונסו לשנות מספר. לצורך חישוב דטרמיננטה אוטומטי נשתמש ב־Excel."
+        },
+        {
+          "kind": "equation",
+          "expr": {
+            "type": "sequence",
+            "items": [
+              {
+                "type": "text",
+                "value": "A="
+              },
+              {
+                "type": "matrix",
+                "rows": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "1"
+                    },
+                    {
+                      "type": "text",
+                      "value": "2"
+                    },
+                    {
+                      "type": "text",
+                      "value": "3"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "0"
+                    },
+                    {
+                      "type": "text",
+                      "value": "4"
+                    },
+                    {
+                      "type": "text",
+                      "value": "5"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "1"
+                    },
+                    {
+                      "type": "text",
+                      "value": "0"
+                    },
+                    {
+                      "type": "text",
+                      "value": "6"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "kind": "paragraph",
+          "text": "בדיקת הדגמה: הדטרמיננטה של מטריצה A היא 22."
+        }
+      ]
+    },
+    {
+      "heading": "טבלת החלטה",
+      "blocks": [
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "מצב",
+              "מה עושים"
+            ],
+            [
+              "0/0",
+              "מפרקים לגורמים ומצמצמים"
+            ],
+            [
+              "∞/∞",
+              "מוצאים איברים דומיננטיים ומפשטים"
+            ],
+            [
+              "מספר / 0",
+              "בודקים גבולות חד־צדדיים וסימנים"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
